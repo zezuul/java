@@ -1,0 +1,26 @@
+Idea zadania
+
+Zadanie sprowadza się do napisania klienta protokołu sieciowego TCP/IP, który połączy się z działającym serwerem i wykona proste zadanie obliczeniowe.
+Przetwarzanie danych
+
+Zadanie obliczeniowe polega na policzeniu ile razy wśród danych powtórzy się pewna liczba. Tak, tylko tyle. Problem w tym, że pobranie danych i dostarczenie rozwiązania wymaga użycia sieci komputerowej.
+
+Na całe szczęście używamy języka Java, gdzie operacje sieciowe realizowane są w bardzo prosty sposób.
+Możliwość przetestowanie programu klienta
+
+Serwer, z którym można nawiązać połączenie działa i jest dostępny z komputera spk-ssh.if.uj.edu.pl. Należy połączyć się z maszyną o adresie IP "172.30.24.101". Serwis sieciowy działa pod numerem portu 8080.
+
+Aby sprawdzić jak wygląda interakcja z serwerem można połączyć się z nim za pomocą polecenia:
+
+telnet 172.30.24.101 8080
+
+Tryby pracy
+
+Udostępniona do testów wersja posiada dwa tryby pracy: człowiek (czlowiek) i program. Wpisanie "czlowiek" powoduje znaczące spowolnienie pracy programu.
+
+We właściwych testach rozwiązania zadania 10, tryb człowiek nie będzie działać, choć komunikaty będą pojawiać się identyczne.
+Dostarczanie rozwiązania
+
+Proszę o dostarczenie kodu klasy Connector. Klasa ma implementować interfejs NetConnection zgodnie z dokumentacją i opisem. Jeśli pojawi się w niej konstruktor, to musi on być konstruktorem bezparametrowym.
+
+Wywołanie metody connect ma doprowadzić do połączenia się klienta z serwerem i jednokrotnego, poprawnego rozwiązania zadania obliczeniowego.
