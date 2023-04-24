@@ -1,0 +1,20 @@
+Idea zadania
+
+Zadanie sprowadza się przetwarzania wektora liczb w histogram pokazujący liczbę wystąpień danej liczby w wektorze z danymi wejściowymi - ta część działa dokładnie tak samo jak w poprzednim zadaniu. Teraz jednak coś nowego: program ma mieć możliwość przetwarzania wielu wektorów danych jednocześnie, przy czym, każdy histogram generuje jeden wątek. Ulega także zmianie sposób odbierania danych: dane nie są odbierane przez użytkownika, lecz do niego dostarczane (Wzorzec Obserwator).
+Przetwarzanie danych
+
+W tym zadaniu w tym samym czasie przetwarzanych jest potencjalnie wiele wektorów na histogramy. Po wygenerowaniu histogramu program sam go przekazuje użytkownikowi. Aby można było powiązać dane z ich histogramami, wprowadzony został unikalny, liczbowy identyfikator wektora danych.
+
+W tym zadaniu nie ma górnego limitu liczby wątków. Jeśli przekazanych zostanie np. 12 wektorów, to można je 12-toma wątkami przetwarzać - przy czym jeden wątek pracuje nad jednym histogramem.
+
+Program ma działać tak:
+
+    Użytkownik konfiguruje system za pomocą metody setup
+    Użytkownik dostarcza wektor z danymi addVector. Metoda addVector rozpoczyna asynchroniczne wyliczanie histogramu.
+    Metoda setVector kończy się, a prace nad histogramem nadal trwają
+    Zakończenie obliczeń dla danego histogramu powoduje wykonanie metody accept z obiektu histogramConsumer i przekazanie wyniku obliczeń. UWAGA: metodę accept MUSI wykonać inny wątek niż ten, który generował histogram. Ponadto, wątek ten nie ma prawa obciążać sobą CPU w trakcie wyliczania histogramu (ma on być uśpiony lub w tym czasie jeszcze nie istnieć).
+
+UWAGA: metoda addVector może zostać wykonana za pomocą wielu wątków, nawet jednocześnie.
+Dostarczanie rozwiązania
+
+Proszę o dostarczenie kodu klasy MultipleHistograms. Klasa ma implementować interfejs Histogram zgodnie z dokumentacją i opisem. Jeśli pojawi się w niej konstruktor, to musi on być konstruktorem bezparametrowym. 
